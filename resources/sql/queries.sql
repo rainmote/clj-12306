@@ -1,3 +1,15 @@
+-- :name add-tag! :<!
+-- :doc add a tag
+INSERT INTO tags (name) VALUES (:name) returning id, name
+
+-- :name delete-tag! :! :n
+-- :doc delete a tag
+DELETE FROM tags WHERE id = :id
+
+-- :name get-all-tags :? :*
+-- :doc retrieves all tags
+SELECT * FROM tags
+
 -- :name create-user! :! :n
 -- :doc creates a new user record
 INSERT INTO users

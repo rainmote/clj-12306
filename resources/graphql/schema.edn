@@ -1,25 +1,59 @@
 {:enums
  {:episode
   {:description "The episodes of the original Star Wars trilogy."
-   :values [:NEWHOPE :EMPIRE :JEDI]}}
+   :values      [:NEWHOPE :EMPIRE :JEDI]}}
 
  :objects
  {:droid
   {:fields {:primary_functions {:type (list String)}
-            :id {:type Int}
-            :name {:type String}
-            :appears_in {:type (list :episode)}}}
+            :id                {:type Int}
+            :name              {:type String}
+            :appears_in        {:type (list :episode)}}}
 
   :human
-  {:fields {:id {:type Int}
-            :name {:type String}
+  {:fields {:id          {:type Int}
+            :name        {:type String}
             :home_planet {:type String}
-            :appears_in {:type (list :episode)}}}}
+            :appears_in  {:type (list :episode)}}}
+
+  :tag
+  {:fields {:id   {:type Int}
+            :name {:type String}}}
+
+  :ipinfo
+  {:fields {:status      {:type String}
+            :country     {:type String}
+            :countryCode {:type String}
+            :region      {:type String}
+            :regionName  {:type String}
+            :city        {:type String}
+            :zip         {:type String}
+            :lat         {:type Float}
+            :lon         {:type Float}
+            :timezone    {:type String}
+            :isp         {:type String}
+            :org         {:type String}
+            :as          {:type String}
+            :query       {:type String}}}}
+
+ :mutations
+ {:addTag    {:type    :tag
+              :args    {:name {:type String}}
+              :resolve :add-tag}
+  :deleteTag {:type    Int
+              :args    {:id {:type Int}}
+              :resolve :delete-tag}}
 
  :queries
- {:hero {:type (non-null :human)
-         :args {:id {:type String :default-value "2001"}}
-         :resolve :get-hero}
-  :droid {:type :droid
-          :args {:name {:type String}}
-          :resolve :get-droid}}}
+ {:tag    {:type    (list :tag)
+           :args    {}
+           :resolve :get-tag}
+  :hero   {:type    (non-null :human)
+           :args    {:id {:type String :default-value "2001"}}
+           :resolve :get-hero}
+  :droid  {:type    :droid
+           :args    {:name {:type String}}
+           :resolve :get-droid}
+  :ipinfo {:type    (list :ipinfo)
+           :args    {:iplist {:type (list String)}}
+           :resolve :get-ipinfo}}}

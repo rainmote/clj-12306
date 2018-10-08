@@ -63,11 +63,3 @@
       (System/exit 0))
     :else
     (start-app args)))
-
-(+ 3 2)
-
-(defn func [x] (* x x))
-
-(func 5)
-
-(func 6)

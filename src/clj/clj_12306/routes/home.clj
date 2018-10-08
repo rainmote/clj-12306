@@ -6,7 +6,7 @@
             [clojure.java.io :as io]))
 
 (defn home-page []
-  (layout/render "home.html"))
+  (layout/render "index.html"))
 
 (defroutes home-routes
   (GET "/" []

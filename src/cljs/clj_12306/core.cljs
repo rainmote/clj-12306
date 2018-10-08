@@ -6,70 +6,45 @@
             [goog.history.EventType :as HistoryEventType]
             [markdown.core :refer [md->html]]
             [ajax.core :refer [GET POST]]
+            [secretary.core :as secretary]
+            [antizer.reagent :as ant]
             [clj-12306.ajax :as ajax]
             [clj-12306.events]
-            [secretary.core :as secretary])
+            [clj-12306.ui.base :as ui]
+            [clj-12306.ui.home :as home]
+            [clj-12306.ui.cdn :as cdn]
+            [clj-12306.ui.task :as task])
   (:import goog.History))
 
-; the navbar components are implemented via baking-soda [1]
-; library that provides a ClojureScript interface for Reactstrap [2]
-; Bootstrap 4 components.
-; [1] https://github.com/gadfly361/baking-soda
-; [2] http://reactstrap.github.io/
+(defn router [x]
+  (get {:home-page #'home/home-page
+        :create-task-page #'task/create-task-page
+        :query-task-page #'task/query-task-page
+        :cdn-import-data-page #'cdn/cdn-import-data-page
+        :cdn-query-page #'cdn/cdn-query-page}
+       x))
 
-(defn nav-link [uri title page]
-  [b/NavItem
-   [b/NavLink
-    {:href   uri
-     :active (when (= page @(rf/subscribe [:page])) "active")}
-    title]])
-
-(defn navbar []
-  (r/with-let [expanded? (r/atom true)]
-    [b/Navbar {:light true
-               :class-name "navbar-dark bg-primary"
-               :expand "md"}
-     [b/NavbarBrand {:href "/"} "clj-12306"]
-     [b/NavbarToggler {:on-click #(swap! expanded? not)}]
-     [b/Collapse {:is-open @expanded? :navbar true}
-      [b/Nav {:class-name "mr-auto" :navbar true}
-       [nav-link "#/" "Home" :home]
-       [nav-link "#/about" "About" :about]]]]))
-
-(defn about-page []
-  [:div.container
-   [:div.row
-    [:div.col-md-12
-     [:img {:src "/img/warning_clojure.png"}]]]])
-
-(defn home-page []
-  [:div.container
-   [:div.row>div.col-sm-12
-    [:h2.alert.alert-info "Tip: try pressing CTRL+H to open re-frame tracing menu"]]
-   (when-let [docs @(rf/subscribe [:docs])]
-     [:div.row>div.col-sm-12
-      [:div {:dangerouslySetInnerHTML
-             {:__html (md->html docs)}}]])])
-
-(def pages
-  {:home #'home-page
-   :about #'about-page})
-
-(defn page []
-  [:div
-   [navbar]
-   [(pages @(rf/subscribe [:page]))]])
+(defn gen-page []
+  (let [nav-path @(rf/subscribe [:nav-path])]
+    [ant/layout {:style {:height "100%"}}
+     (ui/sider)
+     [ant/layout
+      (ui/header)
+      (ui/content nav-path ((router (last nav-path))))
+      (ui/footer)]]))
 
 ;; -------------------------
 ;; Routes
-
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
-  (rf/dispatch [:navigate :home]))
+                    (rf/dispatch [:navigate :home-page]))
 
-(secretary/defroute "/about" []
-  (rf/dispatch [:navigate :about]))
+(secretary/defroute "/page/:name" [name]
+                    (rf/dispatch (->> (clojure.string/split name #"/")
+                                      (map keyword)
+                                      (cons :home-page)
+                                      vector)))
 
 ;; -------------------------
 ;; History
@@ -86,11 +61,11 @@
 ;; Initialize app
 (defn mount-components []
   (rf/clear-subscription-cache!)
-  (r/render [#'page] (.getElementById js/document "app")))
+  (r/render [#'gen-page] (.getElementById js/document "app")))
 
 (defn init! []
-  (rf/dispatch-sync [:navigate :home])
+  (rf/dispatch-sync [:initdb])
+  (rf/dispatch-sync [:navigate :home-page])
   (ajax/load-interceptors!)
-  (rf/dispatch [:fetch-docs])
   (hook-browser-navigation!)
   (mount-components))

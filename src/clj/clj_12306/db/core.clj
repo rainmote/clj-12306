@@ -58,3 +58,13 @@
   (sql-value [value] (to-pg-json value))
   IPersistentVector
   (sql-value [value] (to-pg-json value)))
+
+
+(defn get-tag [context args value]
+  (get-all-tags))
+
+(defn add-tag [context args value]
+  (first (add-tag! {:name (:name args)})))
+
+(defn delete-tag [context args value]
+  (delete-tag! {:id (:id args)}))

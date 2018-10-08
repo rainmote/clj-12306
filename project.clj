@@ -3,9 +3,12 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
 
-  :dependencies [[baking-soda "0.2.0" :exclusions [cljsjs/react-bootstrap]]
+  :dependencies [[antizer "0.3.1"]
+                 [baking-soda "0.2.0" :exclusions [cljsjs/react-bootstrap]]
                  [buddy "2.0.0"]
                  [ch.qos.logback/logback-classic "1.2.3"]
+                 [cheshire "5.8.1"]
+                 [clj-http "3.9.1"]
                  [clj-time "0.14.4"]
                  [cljs-ajax "0.7.4"]
                  [cljsjs/react-popper "0.10.4-0"]
@@ -17,6 +20,7 @@
                  [compojure "1.6.1"]
                  [conman "0.8.2"]
                  [cprop "0.1.11"]
+                 [day8.re-frame/http-fx "0.1.6"]
                  [funcool/struct "1.3.0"]
                  [luminus-aleph "0.1.5"]
                  [luminus-migrations "0.5.3"]
@@ -37,6 +41,7 @@
                  [org.webjars/font-awesome "5.3.1"]
                  [org.webjars/webjars-locator "0.34"]
                  [re-frame "0.10.6"]
+                 [re-graph "0.1.5"]
                  [reagent "0.8.1"]
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.6.3"]
