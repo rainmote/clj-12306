@@ -1,5 +1,5 @@
 (ns clj-12306.http.client
-  (:require [clj-http.client :as client]
+  (:require [clj-http.client :as hc]
             [clj-12306.http.useragent :refer [user-agent-list]]
             [cheshire.core :refer :all]))
 
@@ -42,5 +42,5 @@
   (->> {:headers (construct-headers)
         :params {:form-params params}}
        (construct-request ,)
-       (client/post "http://ip-api.com/batch" ,)
+       (hc/post "http://ip-api.com/batch" ,)
        (:body ,)))

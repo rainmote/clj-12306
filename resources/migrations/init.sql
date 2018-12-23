@@ -1,13 +1,13 @@
-DROP TABLE IF EXISTS cdnnodes;
 DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS cdn_nodes;
 
 CREATE TABLE tags (
-    id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY NOT NULL,
     name varchar(255) UNIQUE
 );
 
-CREATE TABLE cdnnodes (
-    ip inet PRIMARY KEY,
+CREATE TABLE cdn_nodes (
+    ip inet PRIMARY KEY NOT NULL,
     country varchar(255),
     country_code varchar(255),
     region varchar(255),
@@ -21,6 +21,5 @@ CREATE TABLE cdnnodes (
     longitude real,
     latitude real,
     last_access TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    last_useable TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT cdnnodes_tag_id_fkey FOREIGN KEY(tag_id) REFERENCES tags(id) ON DELETE SET NULL
+    last_useable TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

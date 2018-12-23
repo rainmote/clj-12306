@@ -21,39 +21,45 @@
             :name {:type String}}}
 
   :ipinfo
-  {:fields {:status      {:type String}
-            :country     {:type String}
-            :countryCode {:type String}
-            :region      {:type String}
-            :regionName  {:type String}
-            :city        {:type String}
-            :zip         {:type String}
-            :lat         {:type Float}
-            :lon         {:type Float}
-            :timezone    {:type String}
-            :isp         {:type String}
-            :org         {:type String}
-            :as          {:type String}
-            :query       {:type String}}}}
+  {:fields {:ip           {:type String}
+            :country      {:type String}
+            :country_code {:type String}
+            :region       {:type String}
+            :region_name  {:type String}
+            :city         {:type String}
+            :isp          {:type String}
+            :org          {:type String}
+            :as_info      {:type String}
+            :domain       {:type String}
+            :longitude    {:type Float}
+            :latitude     {:type Float}}}}
 
  :mutations
- {:addTag    {:type    :tag
-              :args    {:name {:type String}}
-              :resolve :add-tag}
-  :deleteTag {:type    Int
-              :args    {:id {:type Int}}
-              :resolve :delete-tag}}
+ {:addTag     {:type    :tag
+               :args    {:name {:type String}}
+               :resolve :add-tag}
+  :deleteTag  {:type    Int
+               :args    {:id {:type Int}}
+               :resolve :delete-tag}
+  :addCdnNode {:type    Int
+               :args    {:ip           {:type String}
+                         :country      {:type String}
+                         :country_code {:type String}
+                         :region       {:type String}
+                         :region_name  {:type String}
+                         :city         {:type String}
+                         :isp          {:type String}
+                         :org          {:type String}
+                         :as_info      {:type String}
+                         :domain       {:type String}
+                         :longitude    {:type Float}
+                         :latitude     {:type Float}}
+               :resolve :add-cdn-node}}
 
  :queries
- {:tag    {:type    (list :tag)
-           :args    {}
-           :resolve :get-tag}
-  :hero   {:type    (non-null :human)
-           :args    {:id {:type String :default-value "2001"}}
-           :resolve :get-hero}
-  :droid  {:type    :droid
-           :args    {:name {:type String}}
-           :resolve :get-droid}
-  :ipinfo {:type    (list :ipinfo)
-           :args    {:iplist {:type (list String)}}
-           :resolve :get-ipinfo}}}
+ {:tag {:type    (list :tag)
+        :args    {}
+        :resolve :get-tag}
+  :cdn {:type    (list :ipinfo)
+        :args    {:ip {:type String}}
+        :resolve :get-cdn-node}}}

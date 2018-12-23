@@ -1,0 +1,201 @@
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 10.189 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 0.432 seconds.[0m
+[36m----  Could not Analyze  src/cljs/clj_12306/graphql.cljs   line:1  column:1  ----[0m
+
+  [1mLibrary name must be specified as a symbol in :require / :require-macros; offending spec: [] at line 1 src/cljs/clj_12306/graphql.cljs[0m
+
+  [33m1[0m  [1m(ns clj-12306.graphql[0m
+  [0m [0m  [33m^--- Library name must be specified as a symbol in :require / :require-macros; offending spec: [] at line 1 src/cljs/clj_12306/graphql.cljs[0m
+  [36m2[0m  [36m  (:require []))[0m
+
+[36m----  Analysis Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 7.103 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/clj_12306/graphql.cljs   line:5  column:2  ----[0m
+
+  [1mUse of undeclared Var clj-12306.graphql/re[0m
+
+  [36m1[0m  [36m(ns clj-12306.graphql[0m
+  [36m2[0m  [36m  (:require [re-graph.core :as re-graph]))[0m
+  [36m3[0m  [36m[0m
+  [36m4[0m  [36m[0m
+  [33m5[0m  [1m(re)[0m
+  [0m [0m  [33m ^--- Use of undeclared Var clj-12306.graphql/re[0m
+
+[36m----  Compiler Warning : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 3.487 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.839 seconds.[0m
+[36m----  Could not Read  src/cljs/clj_12306/graphql.cljs   line:5 ----[0m
+
+  [1m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 5, col 11] Invalid symbol: re-graph/.[0m
+
+  [33m5[0m  [1m(re-graph/)[0m
+  [0m [0m  [33m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 5, col 11] Invalid symbol: re-graph/.[0m
+
+[36m----  Reader Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 2.775 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 5.158 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 3.374 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 0.177 seconds.[0m
+[36m----  Could not Analyze  src/cljs/clj_12306/graphql.cljs   line:1  column:1  ----[0m
+
+  [1mLibrary name must be specified as a symbol in :require / :require-macros; offending spec: [] at line 1 src/cljs/clj_12306/graphql.cljs[0m
+
+  [33m1[0m  [1m(ns clj-12306.graphql[0m
+  [0m [0m  [33m^--- Library name must be specified as a symbol in :require / :require-macros; offending spec: [] at line 1 src/cljs/clj_12306/graphql.cljs[0m
+  [36m2[0m  [36m  (:require [re-graph.core :as re-graph][0m
+  [36m3[0m  [36m            []))[0m
+
+[36m----  Analysis Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.279 seconds.[0m
+[36m----  Could not Analyze  src/cljs/clj_12306/graphql.cljs  ----[0m
+
+  [1mNo such namespace: re-frame, could not locate re_frame.cljs, re_frame.cljc, or JavaScript source providing "re-frame" (Please check that namespaces with dashes use underscores in the ClojureScript file name) [0m
+
+[36m----  Analysis Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 0.163 seconds.[0m
+[36m----  Could not Analyze  src/cljs/clj_12306/graphql.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as alias, :refer (names) and :rename {from to} options supported in :require; offending spec: [re-frame.core :as] at line 1 src/cljs/clj_12306/graphql.cljs[0m
+
+  [33m1[0m  [1m(ns clj-12306.graphql[0m
+  [0m [0m  [33m^--- Only :as alias, :refer (names) and :rename {from to} options supported in :require; offending spec: [re-frame.core :as] at line 1 src/cljs/clj_12306/graphql.cljs[0m
+  [36m2[0m  [36m  (:require [re-graph.core :as re-graph][0m
+  [36m3[0m  [36m            [re-frame.core :as ]))[0m
+
+[36m----  Analysis Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 4.949 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.15 seconds.[0m
+[36m----  Could not Read  src/cljs/clj_12306/graphql.cljs   line:5 ----[0m
+
+  [1m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 5, col 5] Invalid symbol: rf/.[0m
+
+  [36m3[0m  [36m            [re-frame.core :as rf]))[0m
+  [36m4[0m  [36m[0m
+  [33m5[0m  [1m(rf/)[0m
+  [0m [0m  [33m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 5, col 5] Invalid symbol: rf/.[0m
+
+[36m----  Reader Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.83 seconds.[0m
+[36m----  Could not Read  src/cljs/clj_12306/graphql.cljs   line:6 ----[0m
+
+  [1m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 6, col 1] Unexpected EOF while reading item 1 of list, starting at line 5 and column 1.[0m
+
+[36m----  Reader Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 4.451 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/core.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.931 seconds.[0m
+[36m----  Could not Read  src/cljs/clj_12306/core.cljs   line:69 ----[0m
+
+  [1m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/core.cljs [line 69, col 32] Invalid keyword: ::re-graph/init.[0m
+
+  [36m67[0m  [36m(rf/dispatch-sync [:initdb])[0m
+  [36m68[0m  [36m(rf/dispatch-sync [:navigate :home-page])[0m
+  [33m69[0m  [1m(rf/dispatch [::re-graph/init {}])[0m
+  [0m  [0m  [33m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/core.cljs [line 69, col 32] Invalid keyword: ::re-graph/init.[0m
+  [36m70[0m  [36m(ajax/load-interceptors!)[0m
+  [36m71[0m  [36m(hook-browser-navigation!)[0m
+  [36m72[0m  [36m(mount-components))[0m
+
+[36m----  Reader Error : Please see src/cljs/clj_12306/core.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 4.421 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/core.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/clj_12306/graphql.cljs   line:5  column:1  ----[0m
+
+  [1mWrong number of args (0) passed to re-frame.core/reg-event-fx[0m
+
+  [36m1[0m  [36m(ns clj-12306.graphql[0m
+  [36m2[0m  [36m  (:require [re-graph.core :as re-graph][0m
+  [36m3[0m  [36m            [re-frame.core :as rf]))[0m
+  [36m4[0m  [36m[0m
+  [33m5[0m  [1m(rf/reg-event-fx)[0m
+  [0m [0m  [33m^--- Wrong number of args (0) passed to re-frame.core/reg-event-fx[0m
+
+[36m----  Compiler Warning : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 2.196 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/clj_12306/graphql.cljs   line:5  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to re-frame.core/reg-event-fx[0m
+
+  [36m1[0m  [36m(ns clj-12306.graphql[0m
+  [36m2[0m  [36m  (:require [re-graph.core :as re-graph][0m
+  [36m3[0m  [36m            [re-frame.core :as rf]))[0m
+  [36m4[0m  [36m[0m
+  [33m5[0m  [1m(rf/reg-event-fx[0m
+  [0m [0m  [33m^--- Wrong number of args (1) passed to re-frame.core/reg-event-fx[0m
+  [36m6[0m  [36m :re-graphql-init[0m
+  [36m7[0m  [36m )[0m
+
+[36m----  Compiler Warning : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 4.953 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 4.653 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.448 seconds.[0m
+[36m----  Could not Read  src/cljs/clj_12306/graphql.cljs   line:8 ----[0m
+
+  [1m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 8, col 7] Invalid symbol: rg/.[0m
+
+  [36m6[0m  [36m:re-graphql-init[0m
+  [36m7[0m  [36m(fn [_ _][0m
+  [33m8[0m  [1m  rg/))[0m
+  [0m [0m  [33m  /Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 8, col 7] Invalid symbol: rg/.[0m
+
+[36m----  Reader Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 2.479 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 2.422 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src/cljs" "src/cljc" "env/dev/cljs"] in 1.514 seconds.[0m
+[36m----  Could not Read  src/cljs/clj_12306/graphql.cljs   line:8 ----[0m
+
+  [1m/Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 8, col 25] The map literal starting with :http-url on line 8 column 13 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m6[0m  [36m:re-graphql-init[0m
+  [36m7[0m  [36m(fn [_ _][0m
+  [33m8[0m  [1m  (rg/init {:http-url })))[0m
+  [0m [0m  [33m  /Users/lianshitw/12306/clj-12306/src/cljs/clj_12306/graphql.cljs [line 8, col 25] The map literal starting with :http-url on line 8 column 13 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+[36m----  Reader Error : Please see src/cljs/clj_12306/graphql.cljs  ----[0m
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 4.772 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js
+Compiling build :app to "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "target/cljsbuild/public/js/app.js" in 2.254 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/clj_12306/graphql.js

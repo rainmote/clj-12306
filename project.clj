@@ -14,6 +14,7 @@
                  [cljsjs/react-popper "0.10.4-0"]
                  [cljsjs/react-transition-group "2.4.0-0"]
                  [com.cognitect/transit-java "0.8.337"]
+                 [com.cognitect/transit-clj "0.8.313"]
                  [com.fasterxml.jackson.core/jackson-core "2.9.6"]
                  [com.fasterxml.jackson.datatype/jackson-datatype-joda "2.9.6"]
                  [com.walmartlabs/lacinia "0.28.0"]
@@ -21,6 +22,7 @@
                  [conman "0.8.2"]
                  [cprop "0.1.11"]
                  [day8.re-frame/http-fx "0.1.6"]
+                 [enlive "1.1.6"]
                  [funcool/struct "1.3.0"]
                  [luminus-aleph "0.1.5"]
                  [luminus-migrations "0.5.3"]
@@ -33,6 +35,7 @@
                  [nrepl "0.4.5"]
                  [org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.339" :scope "provided"]
+                 [org.clojure/core.async "0.4.474"]
                  [org.clojure/tools.cli "0.3.7"]
                  [org.clojure/tools.logging "0.4.1"]
                  [org.postgresql/postgresql "42.2.4"]
@@ -156,7 +159,6 @@
                       :main "clj-12306.doo-runner"
                       :optimizations :whitespace
                       :pretty-print true}}}}
-                  
                   }
    :profiles/dev {}
    :profiles/test {}})

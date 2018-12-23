@@ -1,6 +1,8 @@
 (ns clj-12306.core
   (:require [clj-12306.handler :as handler]
             [clj-12306.nrepl :as nrepl]
+            [clj-12306.cdn.core :as cdn]
+            [clj-12306.db.core]
             [luminus.http-server :as http]
             [luminus-migrations.core :as migrations]
             [clj-12306.config :refer [env]]
@@ -48,18 +50,35 @@
 
 (defn -main [& args]
   (mount/start #'clj-12306.config/env)
+
+  ; Allow setting http header Host to access the specified CDN node
+  (System/setProperty "sun.net.http.allowRestrictedHeaders", "true")
+
   (cond
     (nil? (:database-url env))
     (do
       (log/error "Database configuration not found, :database-url environment variable must be set before running")
       (System/exit 1))
+
     (some #{"init"} args)
     (do
       (migrations/init (select-keys env [:database-url :init-script]))
+      (log/info "init database finish.")
       (System/exit 0))
+
+    (some #{"update-cdn"} args)
+    (do
+      (mount/start #'clj-12306.db.core/*db*)
+      (->> (:domains env)
+           (map cdn/update-cdn-node ,)
+           (doall ,))
+      (log/info "update cdn finish.")
+      (System/exit 0))
+
     (migrations/migration? args)
     (do
       (migrations/migrate args (select-keys env [:database-url]))
       (System/exit 0))
+
     :else
     (start-app args)))

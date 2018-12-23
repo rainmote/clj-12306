@@ -31,3 +31,15 @@ WHERE id = :id
 -- :doc deletes a user record given the id
 DELETE FROM users
 WHERE id = :id
+
+-- :name get-cdn-node :? :*
+-- :doc retrieves all cdn node given the ip
+SELECT * FROM cdn_nodes
+WHERE domain = :domain
+
+-- :name add-cdn-node :! :n
+-- :doc add a cdn node record
+INSERT INTO cdn_nodes
+(ip, country, country_code, region, region_name, city, isp, org, as_info, domain, longitude, latitude)
+VALUES (inet(:ip), :country, :country_code, :region, :region_name, :city, :isp, :org, :as_info, :domain, :longitude, :latitude)
+

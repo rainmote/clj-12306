@@ -8,7 +8,7 @@
             [ring.util.http-response :refer :all]
             [mount.core :refer [defstate]]
             [clj-12306.db.core :as db]
-            [clj-12306.http.client :as client]))
+            [clj-12306.http.client :as httpclient]))
 
 (defn get-hero [context args value]
   (let [data [{:id          1000
@@ -31,16 +31,23 @@
        :iplist
        (map get-ipinfo-construct-request ,)
        (partition-all 100 ,)
-       (map #(client/batch-query-ip-info %) ,)
+       (map #(httpclient/batch-query-ip-info %) ,)
        (flatten ,)))
+
+(defn add-cdn-node [context args value]
+  (db/add-cdn-node (:node args)))
+
+(defn get-cdn-node [context args value]
+  (db/get-cdn-node args))
 
 (def api-fn
   {:add-tag    db/add-tag
    :delete-tag db/delete-tag
+   :add-cdn-node add-cdn-node
    :get-tag    db/get-tag
    :get-hero   get-hero
    :get-droid  (constantly {})
-   :get-ipinfo get-ipinfo})
+   :get-cdn-node get-cdn-node})
 
 (defstate compiled-schema
           :start
